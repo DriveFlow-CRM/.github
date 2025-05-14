@@ -72,32 +72,45 @@ Proiectul are peste 50 de commits, cu mesaje descriptive care urmează convenți
 
 ## 4. Teste Automate
 
-Sistemul este testat riguros folosind:
+![Teste unitare în .NET](tests.png)
 
-### Unit Testing
-- Backend: xUnit pentru testarea componentelor individuale din API
-- Frontend: Jest pentru testarea componentelor React
+Sistemul DriveFlow este testat riguros folosind o suită de peste 70 de teste unitare implementate în .NET, acoperind toate componentele critice ale aplicației:
 
-### Integration Testing
-- Testarea interacțiunilor dintre microservicii folosind MQTT și message queues
-- Verificarea fluxurilor complete de operații prin API endpoints
+### Unit Testing în .NET
 
-### E2E Testing
-- Testare end-to-end cu Cypress pentru simularea interacțiunilor utilizatorilor
-- Scenarii automate care validează funcționarea sistemului ca întreg
+#### Entity Tests
+- **AddressPositiveTest / AddressNegativeTest** - Validarea entităților de adresă și a constrângerilor acestora
+- **AuthSchoolPositiveTest / AuthSchoolNegativeTest** - Testarea entităților școlilor auto și a regulilor de business
+- **CityPositiveTest / CityNegativeTest** - Validarea entităților de orașe și a relațiilor cu alte entități
+- **CountyPositiveTest / CountyNegativeTest** - Testarea județelor și a validărilor asociate
 
-### CI/CD
-- GitHub Actions pentru rularea automată a testelor la fiecare push
-- Pipeline de integrare și deploy automat care asigură calitatea codului
+#### Authentication & Authorization
+- **JwtGeneratorTokenPositiveTest / JwtGeneratorTokenNegativeTest** - Testarea generării și validării token-urilor JWT
+- **JwtRefreshTokenPositiveTest / JwtRefreshTokenNegativeTest** - Validarea mecanismului de refresh pentru token-uri
+- **RoleClaimsHandler** - Testarea gestionării rolurilor și a permisiunilor
+
+#### Controller Tests
+- **RequestController** - Validarea endpoint-urilor pentru gestionarea cererilor
+- **AuthController** - Testarea autentificării și înregistrării utilizatorilor
+- **AddressController** - Validarea CRUD operațiilor pentru adrese
+
+#### Service Layer Tests
+- **StudentService** - Testarea logicii de business pentru gestionarea elevilor
+- **InstructorService** - Validarea programărilor și disponibilității instructorilor
+- **VehicleService** - Testarea managementului flotei auto
+
+Fiecare test urmărește metodologia AAA (Arrange-Act-Assert) și utilizează mockuri pentru a izola dependențele externe și a asigura testarea precisă a funcționalității specifice.
 
 ## 5. Raportare Bug și Rezolvare cu Pull Request
 
+![Issues din proiect](issues_ss.png)
+
 Gestionarea bug-urilor se realizează prin:
 
-1. **Identificarea și Raportarea** - Utilizăm sistemul de Issues din GitHub pentru a documenta bug-urile descoperite
+1. **Identificarea și Raportarea** - Utilizăm sistemul de [Issues](https://github.com/DriveFlow-CRM/DriveFlow-CRM-API/issues?q=is%3Aissue) din GitHub pentru a documenta bug-urile descoperite
 2. **Analiza și Prioritizarea** - Evaluăm impactul și urgența fiecărui bug pentru a stabili prioritatea
 3. **Rezolvarea** - Creăm branch-uri dedicate pentru rezolvarea bug-urilor (`bugfix/nume-bug`)
-4. **Pull Request și Review** - Soluțiile sunt verificate prin PR-uri și code review
+4. **Pull Request și Review** - Soluțiile sunt verificate prin [PR-uri](https://github.com/DriveFlow-CRM/DriveFlow-CRM-API/pulls?q=) și code review
 5. **Testare** - Verificăm că rezolvarea nu afectează alte funcționalități
 6. **Integrare** - După aprobare, modificările sunt integrate în branch-ul principal
 
@@ -107,7 +120,6 @@ Gestionarea bug-urilor se realizează prin:
 - [PR #16: Enrollment - Îmbunătățiri pentru managementul cererilor](https://github.com/DriveFlow-CRM/DriveFlow-CRM-API/pull/16)
 - [PR #10: Implementare controller pentru autentificare](https://github.com/DriveFlow-CRM/DriveFlow-CRM-API/pull/10)
 - [PR #5: Implementare Repository pattern și Entity Framework](https://github.com/DriveFlow-CRM/DriveFlow-CRM-API/pull/5)
-
 
 ## 6. Comentarii Cod și Respectarea Code Standards
 
