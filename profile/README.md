@@ -8,6 +8,7 @@ DriveFlow CRM simplifică gestionarea școlilor auto prin digitalizarea și auto
 - Minimizarea riscului de penalități legale.
 - Îmbunătățirea experienței elevilor (ceea ce atrage noi clienți).
 
+[Video Demo Link](https://drive.google.com/file/d/1DTmUk6AoM3rf76YQ2YqiswJvWf_gQ2xk/view?usp=sharing)
 ## 1. User Stories și Backlog Creation
 
 1. **Ca administrator al școlii auto**, vreau să pot gestiona programările elevilor, astfel încât să optimizez utilizarea vehiculelor și programul instructorilor.
