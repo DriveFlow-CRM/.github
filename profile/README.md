@@ -11,29 +11,84 @@ DriveFlow CRM simplifică gestionarea școlilor auto prin digitalizarea și auto
 [Video Demo Link](https://drive.google.com/file/d/1DTmUk6AoM3rf76YQ2YqiswJvWf_gQ2xk/view?usp=sharing)
 ## 1. User Stories și Backlog Creation
 
-1. **Ca administrator al școlii auto**, vreau să pot gestiona programările elevilor, astfel încât să optimizez utilizarea vehiculelor și programul instructorilor.
-   
-2. **Ca instructor**, vreau să văd programul meu zilnic, pentru a-mi planifica eficient activitatea.
-   
-3. **Ca elev**, vreau să pot programa ședințe de conducere online, ca să economisesc timp și să evit deplasările la sediul școlii.
-   
-4. **Ca manager al școlii**, vreau să pot vizualiza rapoarte de performanță, pentru a identifica oportunitățile de îmbunătățire.
-   
-5. **Ca administrator financiar**, vreau să pot genera și gestiona facturi automat, pentru a reduce erorile și timpul alocat proceselor manuale.
-   
-6. **Ca elev**, vreau să primesc notificări despre programul meu și eventualele modificări, pentru a-mi organiza eficient timpul.
-   
-7. **Ca manager al școlii**, vreau să monitorizez gradul de utilizare al vehiculelor, pentru a optimiza flota și costurile.
-   
-8. **Ca instructor**, vreau să pot înregistra progresul elevilor după fiecare lecție, pentru a personaliza procesul de învățare.
-   
-9. **Ca elev**, vreau să am acces la materiale educaționale digitale, pentru a-mi îmbunătăți pregătirea teoretică.
-   
-10. **Ca administrator**, vreau să pot genera rapoarte pentru autoritățile de reglementare, pentru a asigura conformitatea legală și a evita penalitățile.
+🗓️ PROGRAMĂRI & ORGANIZARE
 
-11. **Ca manager**, vreau să am acces la statistici despre performanța școlii, pentru a lua decizii strategice informate.
+Ca administrator al școlii auto, vreau să pot gestiona programările elevilor,
+pentru a optimiza utilizarea vehiculelor și programul instructorilor.
 
-12. **Ca instructor**, vreau să pot marca disponibilitatea mea în sistem, pentru a evita suprapunerile și a optimiza programul.
+Ca instructor, vreau să văd programul meu zilnic,
+pentru a-mi planifica eficient activitatea.
+
+Ca elev, vreau să pot programa ședințe de conducere online,
+pentru a economisi timp și a evita deplasările la sediul școlii.
+
+Ca instructor, vreau să pot marca disponibilitatea mea în sistem,
+pentru a evita suprapunerile și a optimiza programul.
+
+Ca administrator, vreau să pot aloca instructori și vehicule automat în funcție de disponibilitate,
+pentru a reduce timpul de planificare manuală.
+
+Ca elev, vreau să pot anula sau reprograma o ședință în avans,
+pentru a evita conflictele de program.
+
+📈 FEEDBACK, EVALUARE & PROGRES
+
+Ca instructor, vreau să pot înregistra progresul elevilor după fiecare lecție,
+pentru a personaliza procesul de învățare.
+
+Ca instructor, vreau să pot completa pentru fiecare lecție un formular identic cu cel de examen,
+pentru a evalua obiectiv performanța elevului (formular auto, 21 puncte maxim admise).
+
+Ca elev, vreau să pot vizualiza feedback-ul detaliat pentru fiecare lecție,
+pentru a înțelege ce abilități trebuie îmbunătățite.
+
+Ca elev, vreau să pot genera automat recomandări personalizate (AI coach)
+pe baza istoricului meu de greșeli.
+
+Ca administrator, vreau să pot vedea progresul mediu al elevilor și performanța instructorilor,
+pentru a identifica zonele unde trebuie îmbunătățit procesul de instruire.
+
+💰 FACTURARE & CONTABILITATE
+
+Ca administrator, vreau să pot genera și gestiona facturi automat,
+pentru a reduce erorile și timpul alocat proceselor manuale.
+
+Ca elev, vreau să pot vedea toate plățile efectuate și facturile descărcabile,
+pentru a avea o evidență clară a costurilor.
+
+Ca administrator, vreau să pot exporta rapoarte contabile (CSV, Excel, PDF)
+pentru raportare către autorități și gestiune internă.
+
+🚗 FLOTĂ & MANAGEMENT VEHICULE
+
+Ca administrator al școlii, vreau să monitorizez gradul de utilizare al vehiculelor,
+pentru a optimiza flota și costurile.
+
+Ca administrator, vreau să pot înregistra reviziile și mentenanțele vehiculelor,
+pentru a preveni defecțiunile și a asigura siguranța.
+
+Ca administrator, vreau să pot primi alerte când expiră asigurarea sau revizia unui vehicul,
+pentru a menține flota conformă.
+
+
+📚 EDUCAȚIE DIGITALĂ & RECOMANDĂRI AI
+
+Ca elev, vreau să primesc recomandări de materiale în funcție de greșelile mele practice,
+pentru a-mi corecta slăbiciunile înainte de examen.
+
+📊 STATISTICI & RAPOARTE
+
+Ca administrator al școlii, vreau să pot vizualiza rapoarte de performanță,
+pentru a identifica oportunitățile de îmbunătățire.
+
+Ca administrator, vreau să am acces la statistici despre performanța școlii,
+pentru a lua decizii strategice informate.
+
+Ca instructor, vreau să văd rapoarte despre progresul fiecărui elev,
+pentru a adapta planul de instruire.
+
+Ca administrator, vreau să pot vizualiza heatmap-uri și grafice comparative,
+pentru a analiza eficiența flotei și performanța echipei.
 
 ## 2. Diagrame
 
