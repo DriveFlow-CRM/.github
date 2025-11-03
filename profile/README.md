@@ -1,12 +1,7 @@
 <img src="logo-extended-plus.svg" alt="DriveFlow CRM Logo" style="background-color: white; width: 100%; max-width: 500px; display: block; margin: 0 auto;">
 
 ---
-
-DriveFlow CRM simplifică gestionarea școlilor auto prin digitalizarea și automatizarea proceselor manuale, repetitive și predispuse la erori. Această soluție rezolvă următoarele probleme cheie:
-
-- Reducerea timpului de administrare cu ~30-50%.
-- Minimizarea riscului de penalități legale.
-- Îmbunătățirea experienței elevilor (ceea ce atrage noi clienți).
+[Inginerie Software](IS.md)
 
 [Video Demo Link](https://drive.google.com/file/d/1DTmUk6AoM3rf76YQ2YqiswJvWf_gQ2xk/view?usp=sharing)
 ## 1. User Stories și Backlog Creation
