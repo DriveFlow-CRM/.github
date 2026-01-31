@@ -1,372 +1,180 @@
-<img src="logo-extended-plus.svg" alt="DriveFlow CRM Logo" style="background-color: white; width: 100%; max-width: 500px; display: block; margin: 0 auto;">
+# Inginerie Software - Project Documentation 
 
----
-[Inginerie Software](IS.md)
+[MDS Documentation](README-MDS.md)
 
-[Video Demo Link](https://drive.google.com/file/d/1DTmUk6AoM3rf76YQ2YqiswJvWf_gQ2xk/view?usp=sharing)
-## 1. User Stories și Backlog Creation
+## Video Demo's
+### [Video Demo v1.0 MDS](https://drive.google.com/file/d/1DTmUk6AoM3rf76YQ2YqiswJvWf_gQ2xk/view?usp=sharing)
+### [Video Demo v2.0 IS](https://drive.google.com/file/d/1DTmUk6AoM3rf76YQ2YqiswJvWf_gQ2xk/view?usp=sharing)
 
-🗓️ PROGRAMĂRI & ORGANIZARE
+## Product Vision
 
-Ca administrator al școlii auto, vreau să pot gestiona programările elevilor,
-pentru a optimiza utilizarea vehiculelor și programul instructorilor.
+Driveflow CRM este o platformă inteligentă, web-based, care oferă școlilor de șoferi de orice dimensiune precizie, eficiență și simplitate în gestionarea activităților zilnice. Este un sistem ușor, susținut de inteligență artificială, care pune automatizarea și personalizarea în centrul procesului de formare rutieră.
 
-Ca instructor, vreau să văd programul meu zilnic,
-pentru a-mi planifica eficient activitatea.
+Cu Driveflow, elevii își pot personaliza parcursul de învățare, instructorii economisesc timp prin automatizare, iar școlile beneficiază de programări fluide, generare automată de chitanțe și instrumente moderne de comunicare — totul fără efort. Driveflow CRM nu doar administrează o școală de șoferi, ci o duce mai departe, modernizând complet experiența educației rutiere.
 
-Ca elev, vreau să pot programa ședințe de conducere online,
-pentru a economisi timp și a evita deplasările la sediul școlii.
+## Product Features
 
-Ca instructor, vreau să pot marca disponibilitatea mea în sistem,
-pentru a evita suprapunerile și a optimiza programul.
+**Driveflow CRM este conceput pentru:**
+- elevii care doresc să se perfecționeze după fiecare curs, indiferent de nivelul de experiență;
+- instructorii care vor să-și reducă volumul de muncă la jumătate până la sfârșitul zilei;
+- școlile de șoferi care își doresc programe ordonate, operațiuni fluide și fără bătăi de cap.
 
-Ca administrator, vreau să pot aloca instructori și vehicule automat în funcție de disponibilitate,
-pentru a reduce timpul de planificare manuală.
+**Noi:**
+- te ajutăm să alegi cea mai potrivită mașină și instructor în funcție de stilul tău de învățare;
+- facilităm feedbackul direct între elev și instructor;
+- generăm programe care se potrivesc perfect atât elevilor, cât și instructorilor.
 
-Ca elev, vreau să pot anula sau reprograma o ședință în avans,
-pentru a evita conflictele de program.
+Driveflow CRM este o soluție flexibilă și completă pentru orice școală de șoferi — indiferent de mărime, echipă sau buget. Prin microservicii, platforma generează automat chitanțe și oferă elevilor instrumentele necesare pentru a-și modela propria experiență de învățare, asigurând că fiecare curs își atinge scopul — fără ca tu să miști un deget.
 
-📈 FEEDBACK, EVALUARE & PROGRES
+## Scenarios
 
-Ca instructor, vreau să pot înregistra progresul elevilor după fiecare lecție,
-pentru a personaliza procesul de învățare.
+### Scenariul 1 – Programari si organizare a sedintelor de conducere
 
-Ca instructor, vreau să pot completa pentru fiecare lecție un formular identic cu cel de examen,
-pentru a evalua obiectiv performanța elevului (formular auto, 21 puncte maxim admise).
+Scheduling Driving Lessons
+Andrei este administratorul unei scoli auto din Bucuresti. El este responsabil de programarea lectiilor de conducere pentru elevi si de alocarea instructorilor si vehiculelor disponibile. In prezent, mare parte din aceste programari se realizeaza manual, folosind tabele Excel si apeluri telefonice. Acest proces duce frecvent la erori, suprapuneri si timpi morti intre sedinte.
 
-Ca elev, vreau să pot vizualiza feedback-ul detaliat pentru fiecare lecție,
-pentru a înțelege ce abilități trebuie îmbunătățite.
+Pentru a rezolva aceasta problema, scoala adopta un nou sistem digital care permite atat instructorilor, cat si elevilor, sa gestioneze programarile online. Instructorii isi pot marca disponibilitatea saptamanala in sistem, iar elevii pot vizualiza intervalele libere si pot face rezervari direct din aplicatie. Sistemul aloca automat vehiculele disponibile, verifica conflictele si trimite notificari tuturor partilor implicate. Daca un elev doreste sa reprogrameze o sedinta, o poate face din contul sau personal, iar sistemul actualizeaza automat orarul. In acest fel, administratorul reduce timpul petrecut cu planificarea manuala si optimizeaza utilizarea flotei si a personalului.
 
-Ca elev, vreau să pot genera automat recomandări personalizate (AI coach)
-pe baza istoricului meu de greșeli.
+### Scenariul 2 – Vizualizarea programului zilnic de catre instructor
 
-Ca administrator, vreau să pot vedea progresul mediu al elevilor și performanța instructorilor,
-pentru a identifica zonele unde trebuie îmbunătățit procesul de instruire.
+Instructor’s Daily Schedule
+Mihai este instructor auto la aceeasi scoala. Inainte, el isi nota programul zilnic intr-un caiet si verifica manual cine este elevul si ce masina este disponibila. De multe ori, unele sedinte se suprapuneau sau masina atribuita nu era libera.
 
-💰 FACTURARE & CONTABILITATE
+Prin noul sistem, Mihai se autentifica pe platforma si acceseaza un panou digital care afiseaza programul zilnic. Fiecare sedinta contine numele elevului, modelul vehiculului si locul de intalnire. Daca un elev anuleaza o sedinta, programul se actualizeaza automat. Mihai poate, de asemenea, sa marcheze perioadele in care este indisponibil, iar sistemul nu va permite programari in acele intervale. Aceasta functionalitate elimina confuziile si ii permite sa-si gestioneze eficient timpul.
 
-Ca administrator, vreau să pot genera și gestiona facturi automat,
-pentru a reduce erorile și timpul alocat proceselor manuale.
+### Scenariul 3 – Evaluarea progresului elevilor
 
-Ca elev, vreau să pot vedea toate plățile efectuate și facturile descărcabile,
-pentru a avea o evidență clară a costurilor.
+Tracking Student Progress
+Irina este instructor auto cu experienta, responsabila de formarea elevilor inaintea examenului practic. Ea obisnuia sa tina evidenta progresului pe hartie, notand observatii dupa fiecare lectie. Aceste foi se pierdeau adesea, iar elevii nu aveau acces la feedback clar.
 
-Ca administrator, vreau să pot exporta rapoarte contabile (CSV, Excel, PDF)
-pentru raportare către autorități și gestiune internă.
+Prin noul sistem, dupa fiecare sedinta, Irina acceseaza formularul digital standardizat, identic cu cel folosit la examenul auto, care contine 21 de puncte de evaluare. Ea completeaza observatiile pentru fiecare criteriu si adauga comentarii suplimentare. Dupa salvare, elevul primeste o notificare si poate consulta feedback-ul in contul sau. Sistemul analizeaza istoricul greselilor si sugereaza exercitii personalizate pentru urmatoarele sedinte. Astfel, procesul devine transparent, digital si orientat pe progresul real al elevului.
 
-🚗 FLOTĂ & MANAGEMENT VEHICULE
+### Scenariul 4 – Facturare automata si evidenta platilor
 
-Ca administrator al școlii, vreau să monitorizez gradul de utilizare al vehiculelor,
-pentru a optimiza flota și costurile.
+Automated Billing and Payment Records
+Anca este administrator financiar in cadrul scolii auto. Ea trebuie sa gestioneze facturile pentru sute de elevi lunar. Sistemul vechi presupunea emiterea manuala a documentelor si completarea rapoartelor contabile, ceea ce ducea la intarzieri si erori.
 
-Ca administrator, vreau să pot înregistra reviziile și mentenanțele vehiculelor,
-pentru a preveni defecțiunile și a asigura siguranța.
+In noul sistem, fiecare plata efectuata de elev genereaza automat o factura digitala. Elevul poate accesa istoricul platilor din contul sau, descarcand facturile in format PDF. Anca are posibilitatea sa exporte rapoarte contabile in formate CSV, Excel sau PDF, utile pentru raportare catre autoritati. Sistemul reduce timpul de procesare, elimina erorile umane si ofera o evidenta clara a tuturor tranzactiilor.
 
-Ca administrator, vreau să pot primi alerte când expiră asigurarea sau revizia unui vehicul,
-pentru a menține flota conformă.
+### Scenariul 5 – Managementul flotei de vehicule
 
+Vehicle Fleet Management
+Bogdan este responsabil de intretinerea vehiculelor scolii auto. In sistemul actual, el foloseste tabele pentru a urmari datele de revizie, asigurari si kilometraj. Deseori, notificarea expirarii RCA sau a reviziei ajunge prea tarziu, ducand la suspendarea temporara a vehiculului.
 
-📚 EDUCAȚIE DIGITALĂ & RECOMANDĂRI AI
+Prin noul sistem, fiecare vehicul are un profil digital cu istoricul complet al reviziilor, defectiunilor si verificarilor. Bogdan primeste alerte automate inainte de expirarea documentelor si poate planifica mentenanta preventiv. De asemenea, administratorul poate vizualiza gradul de utilizare al fiecarui vehicul si poate optimiza alocarea acestora intre instructori. In acest mod, flota este mentinuta in stare optima, iar costurile sunt reduse.
 
-Ca elev, vreau să primesc recomandări de materiale în funcție de greșelile mele practice,
-pentru a-mi corecta slăbiciunile înainte de examen.
+### Scenariul 6 – Analiza performantei si rapoarte
 
-📊 STATISTICI & RAPOARTE
+Performance Analytics and Reporting
+Ioana, directorul scolii auto, doreste o imagine clara asupra activitatii zilnice. Ea are nevoie de date despre numarul de sedinte efectuate, rata de promovare si performanta instructorilor. In trecut, aceste informatii se colectau manual, prin centralizarea fisierelor Excel.
 
-Ca administrator al școlii, vreau să pot vizualiza rapoarte de performanță,
-pentru a identifica oportunitățile de îmbunătățire.
+Noul sistem ofera un tablou de bord interactiv cu rapoarte vizuale, grafice comparative si heatmap-uri. Ioana poate analiza performanta individuala a instructorilor, progresul mediu al elevilor si utilizarea vehiculelor. Printr-un singur click, poate exporta rapoarte lunare pentru managementul intern si autoritati. Aceasta functionalitate transforma analiza scolii intr-un proces rapid si strategic.
 
-Ca administrator, vreau să am acces la statistici despre performanța școlii,
-pentru a lua decizii strategice informate.
+### Scenariul 7 – Educatie digitala asistata de AI
 
-Ca instructor, vreau să văd rapoarte despre progresul fiecărui elev,
-pentru a adapta planul de instruire.
+AI-Based Learning Recommendations
+Vlad este elev la scoala auto si are dificultati in manevrele de parcare. Dupa cateva sedinte, sistemul detecteaza ca el repeta aceleasi greseli in evaluarea instructorului. Modulul AI analizeaza istoricul greselilor si ii recomanda videoclipuri, articole si exercitii practice pentru imbunatatire. Vlad poate accesa aceste materiale direct din contul sau si se poate antrena inaintea urmatoarei lectii. In timp, sistemul monitorizeaza progresul si actualizeaza recomandarile. Astfel, procesul de invatare devine personalizat si eficient.
 
-Ca administrator, vreau să pot vizualiza heatmap-uri și grafice comparative,
-pentru a analiza eficiența flotei și performanța echipei.
 
-## 2. Diagrame
 
-![DB diagram](DF-DB.png)
+## Descriere Arhitecturală 
 
-![Project architecture diagram](DriveFlowArhitecture.png)
+### Sinteza
+<img src="arhitecture1.png"/>
 
-![User case diagram (user flow per pages)](UML_User_Case.png)
+### Diagrame (C4)
+<img alt="structurizr-108028-ContainerDiagram" src="https://github.com/user-attachments/assets/ba12bae1-49f8-4fad-baed-54b9cfb8d73f" />
+<img alt="structurizr-107810-SystemContext" src="https://github.com/user-attachments/assets/bdfbb38e-39e9-415d-ba68-e3959dd8d9f8" />
+<img alt="structurizr-108033-SchedulingComponents" src="https://github.com/user-attachments/assets/3802300d-5ed7-4d28-bcb3-391c51d27935" />
+<img alt="structurizr-108032-AuthComponents" src="https://github.com/user-attachments/assets/a9b1d327-4a7b-48e4-b079-36c79be42311" />
+<img alt="structurizr-108030-ComponentDiagram" src="https://github.com/user-attachments/assets/99bd8689-b15c-4403-b7a2-1278cb6db25e" />
 
-![Backend in .NET file structure diagram](backend_FS_UML.png)
 
-## 3. Source Control cu Git
+## QA
 
-Gestionarea codului sursă se realizează prin GitHub, folosind cele mai bune practici:
+## Security Analysis
 
-### Branch Creation și Workflow
-- Utilizăm modelul **GitFlow** cu branch-uri pentru:
-  - `main` - cod stabil, gata de producție
-  - `develop` - integrare continuă
-  - `feature/nume-funcționalitate` - pentru dezvoltarea noilor funcționalități
-  - `bugfix/nume-bug` - pentru rezolvarea bug-urilor
-  - `hotfix/nume-problema` - pentru rezolvări urgente în producție
 
-### Merge/Rebase
-- Pentru integrarea modificărilor utilizăm:
-  - Pull Requests pentru verificarea codului și aprobări
-  - Rebase pentru menținerea unui istoric curat
-  - Merge doar după review și rezolvarea tuturor comentariilor
 
-### Commits
-Proiectul are peste 50 de commits, cu mesaje descriptive care urmează convenția:
-- `feat:` pentru funcționalități noi
-- `fix:` pentru rezolvarea bug-urilor
-- `refactor:` pentru modificări de cod fără schimbarea funcționalității
-- `docs:` pentru actualizarea documentației
-- `test:` pentru adăugarea sau modificarea testelor
 
-## 4. Teste Automate
+## CI/CD
 
-![Teste unitare în .NET](tests.png)
+### Pipeline Overview
 
-Sistemul DriveFlow este testat riguros folosind o suită de peste 70 de teste unitare implementate în .NET, acoperind toate componentele critice ale aplicației:
+| Repository | Workflow | Trigger | Acțiuni |
+|------------|----------|---------|---------|
+| **DriveFlowWeb** | `ci.yml` | Push/PR pe `main`, `staging` | Install → Test → Coverage → Build → Upload artifacts |
+| **DriveFlow-CRM-API** | `deploy.yml` | Push pe `main` | SSH → VPS → Rebuild container `df-api` |
+| **DF-Accountant** | `deploy.yml` | Push pe `main` | SSH → VPS → Rebuild container `df-accountant` |
+| **df-engine** | `deploy.yml` | Push pe `main` | SSH → VPS → Full stack rebuild |
 
-### Unit Testing în .NET
+### Orchestrare cu df-engine
 
-#### Entity Tests
-- **AddressPositiveTest / AddressNegativeTest** - Validarea entităților de adresă și a constrângerilor acestora
-- **AuthSchoolPositiveTest / AuthSchoolNegativeTest** - Testarea entităților școlilor auto și a regulilor de business
-- **CityPositiveTest / CityNegativeTest** - Validarea entităților de orașe și a relațiilor cu alte entități
-- **CountyPositiveTest / CountyNegativeTest** - Testarea județelor și a validărilor asociate
-
-#### Authentication & Authorization
-- **JwtGeneratorTokenPositiveTest / JwtGeneratorTokenNegativeTest** - Testarea generării și validării token-urilor JWT
-- **JwtRefreshTokenPositiveTest / JwtRefreshTokenNegativeTest** - Validarea mecanismului de refresh pentru token-uri
-- **RoleClaimsHandler** - Testarea gestionării rolurilor și a permisiunilor
-
-#### Controller Tests
-- **RequestController** - Validarea endpoint-urilor pentru gestionarea cererilor
-- **AuthController** - Testarea autentificării și înregistrării utilizatorilor
-- **AddressController** - Validarea CRUD operațiilor pentru adrese
-
-#### Service Layer Tests
-- **StudentService** - Testarea logicii de business pentru gestionarea elevilor
-- **InstructorService** - Validarea programărilor și disponibilității instructorilor
-- **VehicleService** - Testarea managementului flotei auto
-
-Fiecare test urmărește metodologia AAA (Arrange-Act-Assert) și utilizează mockuri pentru a izola dependențele externe și a asigura testarea precisă a funcționalității specifice.
-
-## 5. Raportare Bug și Rezolvare cu Pull Request
-
-![Issues din proiect](issues_ss.png)
-
-Gestionarea bug-urilor se realizează prin:
-
-1. **Identificarea și Raportarea** - Utilizăm sistemul de [Issues](https://github.com/DriveFlow-CRM/DriveFlow-CRM-API/issues?q=is%3Aissue) din GitHub pentru a documenta bug-urile descoperite
-2. **Analiza și Prioritizarea** - Evaluăm impactul și urgența fiecărui bug pentru a stabili prioritatea
-3. **Rezolvarea** - Creăm branch-uri dedicate pentru rezolvarea bug-urilor (`bugfix/nume-bug`)
-4. **Pull Request și Review** - Soluțiile sunt verificate prin [PR-uri](https://github.com/DriveFlow-CRM/DriveFlow-CRM-API/pulls?q=) și code review
-5. **Testare** - Verificăm că rezolvarea nu afectează alte funcționalități
-6. **Integrare** - După aprobare, modificările sunt integrate în branch-ul principal
-
-### Cele mai importante Pull Requests:
-
-#### Backend (DriveFlow-CRM-API):
-- [PR #16: Enrollment - Îmbunătățiri pentru managementul cererilor](https://github.com/DriveFlow-CRM/DriveFlow-CRM-API/pull/16)
-- [PR #10: Implementare controller pentru autentificare](https://github.com/DriveFlow-CRM/DriveFlow-CRM-API/pull/10)
-- [PR #5: Implementare Repository pattern și Entity Framework](https://github.com/DriveFlow-CRM/DriveFlow-CRM-API/pull/5)
-
-## 6. Comentarii Cod și Respectarea Code Standards
-
-### Code Standards
-- Folosim StyleCop pentru C# și ESLint pentru JavaScript/TypeScript
-- Respectăm convențiile de denumire specifice fiecărui limbaj
-- Aplicăm principiile SOLID și Clean Code
-
-### Comentarii Cod
-- Fiecare clasă și metodă publică are comentarii XML pentru documentație
-- Algoritmii complexi sunt documentați cu explicații detaliate
-- Folosim comentarii pentru a explica deciziile de arhitectură și design
-
-### Documentație API
-- API-urile sunt documentate cu Swagger/OpenAPI
-- Toate endpoint-urile au descrieri clare și exemple de utilizare
-
-## 7. Design Patterns
-
-
-
-## 8. Prompt Engineering - Documentarea Folosirii Toolurilor de AI
-
-### GitHub Copilot
-- Utilizat pentru generarea de cod repetitiv și boilerplate
-- Asistență în scrierea unit testelor
-- Completarea funcțiilor și metodelor bazate pe comentarii descriptive
-
-### ChatGPT
-- Generarea specificațiilor pentru API endpoints
-- Asistență în debuggarea problemelor complexe
-- Optimizarea interogărilor SQL
-- Formularea expresiilor regex pentru validări
-
-### Microsoft Copilot
-- Analiza și restructurarea codului existent
-- Generarea documentației tehnice
-- Asistență în refactorizarea componentelor complexe
-
-### Cursor Agent cu Claude 3.7 și 3.5
-- **Design Arhitectural** - Utilizat pentru proiectarea arhitecturii microserviciilor
-- **Generare de UML** - Creare de diagrame UML pentru modelarea datelor
-- **Refactorizare Cod** - Optimizarea algoritmilor și refactorizarea codului legacy
-- **Code Review** - Detectarea bug-urilor potențiale și sugestii de îmbunătățire
-- **Generare Unit Tests** - Crearea automată a testelor unitare pentru funcționalitățile critice
-- **Debugging Complex** - Rezolvarea problemelor de performanță și a bug-urilor greu de identificat
-
-### Multi-Chain Processors (MCP)
-Am utilizat următoarele MCP-uri pentru a extinde capacitățile AI și a optimiza fluxul de dezvoltare:
-
-1. **GitHub Tools MCP** - Pentru integrare directă cu repository-urile și automatizarea workflow-urilor
-   ```
-   mcp_github_search_repositories
-   mcp_github_create_or_update_file
-   mcp_github_create_pull_request
-   ```
-
-2. **Browser Tools MCP** - Pentru testare și debugging în browser
-   ```
-   mcp_Browser_Tools_getConsoleLogs
-   mcp_Browser_Tools_runAccessibilityAudit
-   mcp_Browser_Tools_runPerformanceAudit
-   ```
-
-3. **DB Tools MCP** - Pentru optimizarea interogărilor și structurii bazei de date
-   ```
-   mcp_Supabase_DF_query
-   ```
-
-4. **21st DevMagic MCP** - Pentru generare rapidă de componente UI
-   ```
-   mcp_21st-devmagic_21st_magic_component_builder
-   mcp_21st-devmagic_logo_search
-   mcp_21st-devmagic_21st_magic_component_inspiration
-   ```
-
-5. **Sequential Thinking MCP** - Pentru rezolvarea problemelor complexe prin gândire structurată
-   ```
-   mcp_sequential-thinking_sequentialthinking
-   ```
-
-### Exemple Concrete
-1. **Generarea Modelelor**:
-   ```csharp
-   // Generate a Student class with properties for name, contact info, and enrollment status
-   public class Student
-   {
-       public int Id { get; set; }
-       public string FirstName { get; set; }
-       public string LastName { get; set; }
-       public string Email { get; set; }
-       public string Phone { get; set; }
-       public DateTime EnrollmentDate { get; set; }
-       public bool IsActive { get; set; }
-       
-       // Navigation properties
-       public ICollection<Appointment> Appointments { get; set; }
-       public LicenseType LicenseType { get; set; }
-   }
-   ```
-
-2. **Optimizarea Queries**:
-   ```csharp
-   // Original query generated manually
-   var query = context.Students
-       .Where(s => s.IsActive == true)
-       .Join(context.Appointments, 
-             s => s.Id, 
-             a => a.StudentId, 
-             (s, a) => new { Student = s, Appointment = a })
-       .Where(sa => sa.Appointment.Date > DateTime.Now)
-       .Select(sa => sa.Student);
-   
-   // Optimized query with AI assistance
-   var optimizedQuery = context.Students
-       .Where(s => s.IsActive)
-       .Where(s => s.Appointments.Any(a => a.Date > DateTime.Now));
-   ```
-
-3. **Generarea Testelor cu Claude 3.7**:
-   ```csharp
-   // Generate unit tests for the AppointmentService's CreateAppointment method
-   [Fact]
-   public async Task CreateAppointment_ValidData_ReturnsAppointmentId()
-   {
-       // Arrange
-       var mockRepo = new Mock<IAppointmentRepository>();
-       var mockUnitOfWork = new Mock<IUnitOfWork>();
-       mockUnitOfWork.Setup(uow => uow.AppointmentRepository).Returns(mockRepo.Object);
-       
-       var service = new AppointmentService(mockUnitOfWork.Object);
-       var appointmentDto = new AppointmentCreateDto
-       {
-           StudentId = 1,
-           InstructorId = 2,
-           Date = DateTime.Now.AddDays(1),
-           Duration = 90
-       };
-       
-       var expected = 5;
-       mockRepo.Setup(repo => repo.AddAsync(It.IsAny<Appointment>()))
-           .ReturnsAsync(new Appointment { Id = expected });
-       
-       // Act
-       var result = await service.CreateAppointmentAsync(appointmentDto);
-       
-       // Assert
-       Assert.Equal(expected, result);
-       mockRepo.Verify(repo => repo.AddAsync(It.IsAny<Appointment>()), Times.Once);
-       mockUnitOfWork.Verify(uow => uow.SaveChangesAsync(), Times.Once);
-   }
-   ```
-
-4. **Generare Componente UI cu 21st DevMagic MCP**:
-   ```jsx
-   // Componenta pentru calendarul de programări generată cu ajutorul 21st DevMagic
-   const AppointmentCalendar = () => {
-     const [selectedDate, setSelectedDate] = useState(new Date());
-     const [appointments, setAppointments] = useState([]);
-     
-     useEffect(() => {
-       // Fetch appointments for the selected date
-       fetchAppointments(selectedDate).then(data => {
-         setAppointments(data);
-       });
-     }, [selectedDate]);
-     
-     return (
-       <div className="appointment-calendar">
-         <div className="calendar-header">
-           <h2>Programări</h2>
-           <DatePicker
-             selected={selectedDate}
-             onChange={date => setSelectedDate(date)}
-             dateFormat="dd/MM/yyyy"
-           />
-         </div>
-         <div className="appointments-list">
-           {appointments.length === 0 ? (
-             <div className="no-appointments">Nu există programări pentru această zi</div>
-           ) : (
-             appointments.map(app => (
-               <AppointmentCard
-                 key={app.id}
-                 appointment={app}
-                 onEdit={() => handleEdit(app.id)}
-                 onCancel={() => handleCancel(app.id)}
-               />
-             ))
-           )}
-         </div>
-       </div>
-     );
-   };
-   ```
-
-## Atașamente
-
-Pentru informații suplimentare, consultați [Prezentarea Checkpoint 2](prezentare-checkpoint-2.pdf)
+Repository-ul `df-engine` funcționează ca **orchestrator central** pentru întreaga infrastructură DriveFlow. Acesta coordonează deployment-ul tuturor microserviciilor prin Docker Compose și oferă o configurare unificată pentru:
+
+- **Nginx reverse proxy** - rutare trafic către servicii
+- **Docker Compose** - orchestrare containere (API, Accountant, MySQL)
+- **Git submodules** - referințe către celelalte repository-uri
+- **Scripturi de deploy** - automatizare rebuild și restart
+
+Când se face push pe `main` în oricare repository (API, Accountant sau Engine), workflow-ul respectiv execută scriptul `deploy.sh` pe VPS, care:
+1. Face `git pull` pentru ultimele modificări
+2. Actualizează submodulele dacă e necesar
+3. Rebuild-uiește imaginile Docker afectate
+4. Restartează containerele **fără a șterge volumele** (datele MySQL persistă)
+
+Această abordare permite **Continuous Deployment** - orice modificare pe branch-ul `main` ajunge automat în producție.
+
+### Branching Strategy
+
+#### DriveFlowWeb (Frontend)
+| Branch | Rol | Deployment |
+|--------|-----|------------|
+| `main` | Cod stabil, producție | Auto-deploy pe VPS |
+| `staging` | Testare pre-producție | CI tests + build artifacts |
+| `dev` | Dezvoltare activă | Local development |
+
+**Flux:** `dev` → PR → `staging` (testare) → PR → `main` (producție)
+
+Frontend-ul folosește 3 branch-uri pentru a permite:
+- Testare completă pe `staging` înainte de release
+- Izolarea dezvoltării active de codul stabil
+- Review și QA pe fiecare etapă
+
+#### DriveFlow-CRM-API (Backend)
+| Branch | Rol | Deployment |
+|--------|-----|------------|
+| `main` | Producție | Auto-deploy pe VPS via df-engine |
+| `dev` | Dezvoltare și testare | Local / staging environment |
+
+**Flux:** `dev` → PR cu code review → `main` (producție)
+
+API-ul folosește 2 branch-uri deoarece:
+- Testele unitare (70+) rulează local pe `dev`
+- Code review-ul pe PR asigură calitatea înainte de merge
+- Deployment rapid în producție după aprobare
+
+#### DF-Accountant (Microserviciu Facturi)
+| Branch | Rol | Deployment |
+|--------|-----|------------|
+| `main` | Producție | Auto-deploy pe VPS via df-engine |
+| `dev` | Dezvoltare și testare | Local development |
+
+**Flux:** `dev` → PR → `main` (producție)
+
+Microserviciul de facturare folosește aceeași strategie ca API-ul:
+- Serviciu mic și focusat, nu necesită staging separat
+- Testare locală suficientă datorită scopului limitat
+- Deployment rapid pentru fix-uri și îmbunătățiri
+
+#### df-engine (Orchestrator)
+| Branch | Rol |
+|--------|-----|
+| `main` | Configurație de producție pentru VPS |
+
+**Flux:** Modificări directe pe `main` sau PR-uri pentru schimbări majore
+
+Engine-ul menține doar `main` deoarece:
+- Conține doar configurații de infrastructură (Docker, Nginx, scripturi)
+- Modificările sunt rare și bine definite
+- Testarea se face direct pe VPS (infrastructură identică cu producția)
