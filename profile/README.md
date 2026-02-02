@@ -89,8 +89,111 @@ Vlad este elev la scoala auto si are dificultati in manevrele de parcare. Dupa c
 <img alt="structurizr-108032-AuthComponents" src="https://github.com/user-attachments/assets/a9b1d327-4a7b-48e4-b079-36c79be42311" />
 <img alt="structurizr-108030-ComponentDiagram" src="https://github.com/user-attachments/assets/99bd8689-b15c-4403-b7a2-1278cb6db25e" />
 
+### Descrierea Cerințelor Non-Funcționale și Soluțiile Arhitecturale
+
+## 1. Arhitectură Cloud-Native și Scalabilitate *(df-engine)*
+
+### Problema
+
+Inconsistența mediilor de rulare (ex: *„funcționează local, dar nu pe server”*) și dificultatea de a scala componentele individuale (API vs. worker) în funcție de trafic.
+
+### Soluția în cod
+
+* Implementarea unei **arhitecturi complet containerizate** folosind **Docker** și **docker-compose**.
+* Fiecare serviciu (**API**, **Accountant**, **Frontend**) dispune de un **Dockerfile propriu**, optimizat pentru rolul său.
+* Orchestrarea realizată în **df-engine** permite:
+
+  * pornirea și oprirea independentă a containerelor;
+  * izolarea responsabilităților fiecărui serviciu;
+  * rularea aplicației într-un mod **cloud-agnostic** (compatibil AWS, Azure sau VPS clasic).
+
+---
+
+## 2. Securizare Automatizată (HTTPS) în Orchestrator
+
+### Problema
+
+Expunerea aplicației prin HTTP este nesigură, iar configurarea și reînnoirea manuală a certificatelor SSL este predispusă la erori umane și perioade de indisponibilitate.
+
+### Soluția în cod
+
+* Integrarea **Nginx** ca **Reverse Proxy** direct în rețeaua Docker pentru gestionarea traficului de intrare.
+* Adăugarea unui container **Certbot** în `docker-compose` care:
+
+  * obține certificate **Let’s Encrypt**;
+  * rulează scripturi automate (`init-cert.sh`, `renew-certs.sh`);
+  * partajează volumele de certificate cu Nginx.
+* Rezultatul este o soluție de securizare **„zero-touch”**, cu reînnoire automată a certificatelor HTTPS, fără downtime.
+
+---
+
+## 3. UX Consistent și Modern *(Frontend Custom)*
+
+### Problema
+
+Componentele HTML standard duc la o experiență de utilizare neuniformă, iar stilizarea manuală cu CSS pentru fiecare element crește complexitatea și riscul de bug-uri de afișare.
+
+### Soluția în cod
+
+* Implementarea **Angular Material** pentru:
+
+  * tabele;
+  * dialoguri;
+  * formulare și datepickers;
+  * asigurarea accesibilității și a unui comportament standardizat.
+* Aplicarea unei **teme custom** (paletă de culori, tipografie) în `styles.scss`.
+* Utilizarea **Tailwind CSS** pentru:
+
+  * layout-uri responsive rapide;
+  * reducerea codului CSS custom;
+  * obținerea unui **Design System unitar** la nivelul aplicației.
+
+---
+
+## 4. Managementul Latenței în AI Proxy *(Server-Sent Events)*
+
+### Problema
+
+Interogările către modelele AI pot avea latență ridicată. Așteptarea răspunsului complet blochează interfața utilizatorului și poate genera timeout-uri pe conexiunile HTTP standard.
+
+### Soluția în cod
+
+* Implementarea protocolului **Server-Sent Events (SSE)** în ruta de **AI-Proxy**.
+
+**Backend:**
+
+* Controller-ul nu returnează un JSON unic.
+* Răspunsul este transmis incremental, folosind *streaming* (yield de bucăți de text pe măsură ce sunt generate).
+
+**Frontend:**
+
+* Utilizarea **EventSource** (sau stream reader) pentru:
+
+  * afișarea progresivă a răspunsului;
+  * efect vizual de *„mașină de scris”*.
+* Această abordare îmbunătățește semnificativ **percepția vitezei** și experiența utilizatorului.
+
+---
 
 ## QA
+
+## Plan de testare
+### 1) Obiectivele testarii (artefacte + nivel)
+
+Artefactele pe care le-am testat in implementarea mea sunt: endpointurile din controllere (CRUD + flow-uri), mecanismele de autentificare/refresh (JWT + refresh token), autorizarea pe roluri si scoping pe AutoSchoolId, plus persistenta prin EF Core DbContext (in InMemory). La nivel unit am testat componente izolate in fisierele *PositiveTest.cs si *NegativeTest.cs, inclusiv serviciile JwtGeneratorToken si JwtRefreshToken si logica de controller in izolare cu Moq. La nivel system end-to-end am testat API-ul complet prin HTTP real in folderul SystemApiTests/ folosind CustomWebApplicationFactory, cu teste dedicate pentru autentificare (AuthControllerSystemTests.cs), autorizare (AuthorizationSystemTests.cs), CRUD (CrudSystemTests_*.cs) si flow-uri business (RequestFlowSystemTests.cs, AvailabilityToSessionFormFlowSystemTests.cs). Validarea rezultatelor in toate nivelurile se face prin statusuri HTTP si prin efect observabil in date (verificare in DB InMemory si/sau request de citire ulterior).
+
+### 2) Procesul testarii (cand in SDLC se aplica metodele)
+
+In implementarea mea, construirea testelor porneste direct din codul aplicatiei: rutele, metodele si regulile [Authorize] sunt citite din controllere, apoi am construit cazuri pozitive si negative. In SDLC, asta se aplica astfel: in etapa de implementation am scris testele unitare in paralel cu logica (ex: tokenuri si controllere in izolare), iar dupa ce aplicatia a fost rulabila in mediu de test am adaugat testele system end-to-end prin WebApplicationFactory ca sa validez pipeline-ul real (routing, auth, validari). Dupa modificari de cod, suita ruleaza ca regression prin flow-urile cap-coada si matricea de autorizare (in AuthorizationSystemTests.cs si *FlowSystemTests.cs) ca sa detecteze rapid rupturi in contractul endpointurilor sau in regulile de business.
+
+### 3) Metodele testarii folosite (cum au fost folosite + de ce sunt relevante pentru artefact)
+
+Pentru artefactul “endpoint API + contract HTTP”, am folosit functional testing prin teste system si CRUD lifecycle, implementate in CrudSystemTests_*.cs si testele pe controllere, unde verific explicit secventa CREATE -> LIST -> GET -> UPDATE -> DELETE -> 404 si statusurile (200/201/204/400/404 etc.). Pentru artefactul “securitate endpointuri”, am folosit security testing implementat direct in AuthControllerSystemTests.cs si AuthorizationSystemTests.cs, unde verific 401 fara token, 403 cu rol nepermis, succes cu rol permis si scenarii cross-school pe AutoSchoolId (SchoolAdminB nu poate accesa resurse SchoolA, iar SuperAdmin poate). Pentru artefactul “logica interna tokenuri”, am folosit testare unit determinista in JwtGeneratorTokenPositiveTest/NegativeTest si JwtRefreshTokenPositiveTest/NegativeTest cu scenarii valid/invalid/expirat/config invalid/parametri lipsa, deoarece aceste componente sunt izolabile si defectele trebuie prinse rapid fara pipeline HTTP. Pentru artefactul “flow-uri business”, am folosit testare end-to-end + regresie in RequestFlowSystemTests.cs si AvailabilityToSessionFormFlowSystemTests.cs, deoarece aceste scenarii traverseaza mai multe endpointuri si reguli si doar asa confirm integrarea reala.
+
+### 4) Rezultatele testarii (observatii din implementare)
+
+Din implementarea mea rezulta ca suita acopera: autentificare (login + refresh cu succes/esec), autorizare pe roluri (matrice pe endpointuri) si izolarea pe AutoSchoolId, CRUD complet pe 9 entitati prin teste dedicate, plus flow-uri business cap-coada (Request flow, Availability -> SessionForm). Observatia cea mai concreta din implementare este ca in testele in care apelez direct actiuni de controller (fara pipeline HTTP), validarea automata nu ruleaza ca in productie, deci pentru scenarii care trebuie sa dea 400 a fost necesar sa setez ModelState explicit in test; in schimb, in testele system end-to-end prin CustomWebApplicationFactory, validarea, 401/403 si restul comportamentelor apar natural deoarece requesturile trec prin pipeline real. O alta observatie este ca repetabilitatea este asigurata prin EF Core InMemory + seed determinist (roluri, scoli, utilizatori, entitati), ceea ce face testele stabile si permite verificarea efectului observabil in date dupa create/update/delete, cu confirmari suplimentare prin requesturi de citire.
+
 
 ### 1 Verification and Validation
 In teste verific raspunsul endpointurilor prin codurile de raspuns HTTP si verific comportamentul prin efectul observabil in date adica dupa creare modificare sau stergere se vede schimbarea in DbContext sau printr un request de citire ulterior 
